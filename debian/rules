@@ -1,0 +1,33 @@
+#!/usr/bin/make -f
+
+package	 = khronos-opencl-headers
+api	 = 1.2
+
+%:
+	dh $@
+
+override_dh_auto_test:
+	$(MAKE) -C debian/t
+
+override_dh_auto_clean:
+	$(MAKE) -C debian/t clean
+
+
+version		 = $(api)-svn$(REVISION)
+src_dir		 = $(package)-$(version).orig
+src_file	 = $(package)_$(version).orig.tar.gz
+svn_url		 = https://cvs.khronos.org/svn/repos/registry/trunk/public/cl/api/$(api)
+svn_latest	 = $(shell LC_MESSAGES=C svn info $(svn_url) | sed -n '/Last Changed Rev:/ s/.* //p')
+
+get-orig-source:
+ifeq (,$(filter-out latest,$(REVISION)))
+	debian/rules $@ REVISION="$(or $(svn_latest),fail)"
+else
+	$(RM) -r $(src_dir)
+	svn export --revision $(REVISION) $(svn_url) $(src_dir)
+	GZIP="--best --no-name" tar cfz $(src_file) --exclude-vcs --owner=root --group=src $(src_dir)
+	$(RM) -r $(src_dir)
+endif
+
+latest:
+	@echo "Latest header revision for API $(api) is r$(svn_latest)"

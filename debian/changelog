@@ -1,0 +1,151 @@
+khronos-opencl-headers (1.2-svn26009-1) unstable; urgency=medium
+
+  * New upstream snapshot.
+    - Includes cl_egl.h.
+  * Switch get-orig-source target to download from SVN.  (Closes: #718658)
+  * Bump Standards-Version to 3.9.5 (no changes needed).
+
+ -- Andreas Beckmann <anbe@debian.org>  Mon, 20 Oct 2014 17:04:48 +0200
+
+khronos-opencl-headers (1.2-2014.04.13-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload
+  * Use __vector instead of vector in cl_platform.h to allow building
+    with -maltivec. Closes: #760310
+
+ -- Andreas Barth <aba@ayous.org>  Fri, 12 Sep 2014 19:52:42 +0000
+
+khronos-opencl-headers (1.2-2014.04.13-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Refresh fuzzy AMD_extensions.patch.
+  * Add lintian override for debian-watch-may-check-gpg-signature.
+
+ -- Andreas Beckmann <anbe@debian.org>  Thu, 22 May 2014 11:09:31 +0200
+
+khronos-opencl-headers (1.2-2013.10.23-1) unstable; urgency=low
+
+  * New upstream release.
+  * Bump Standards-Version to 3.9.5 (no changes needed).
+
+ -- Andreas Beckmann <anbe@debian.org>  Thu, 07 Nov 2013 00:44:48 +0100
+
+khronos-opencl-headers (1.2-2013.06.28-2) unstable; urgency=low
+
+  * opencl-headers: Set Multi-Arch: foreign.
+  * Set Maintainer to 'Debian OpenCL Maintainers <pkg-opencl-devel@l.a.d.o>'.
+
+ -- Andreas Beckmann <anbe@debian.org>  Mon, 29 Jul 2013 00:25:51 +0200
+
+khronos-opencl-headers (1.2-2013.06.28-1) unstable; urgency=low
+
+  * New upstream release.
+  * AMD_extensions.patch: Rediffed.
+  * Drop Breaks/Replaces against squeeze packages.
+  * Use canonical Vcs-* URLs.
+  * Switch to debhelper 9.
+
+ -- Andreas Beckmann <anbe@debian.org>  Sun, 14 Jul 2013 15:28:57 +0200
+
+khronos-opencl-headers (1.2-2013.02.12-1) unstable; urgency=low
+
+  * New upstream release.
+  * CL_EXT_SUFFIX__VERSION_1_2.diff: Drop, fixed upstream.
+  * clSetPrintfCallback.patch: Drop, no longer needed.
+  * Bump Standards-Version to 3.9.4 (no changes needed).
+  * Update my email address and drop DMUA.
+
+ -- Andreas Beckmann <anbe@debian.org>  Sun, 28 Apr 2013 01:11:59 +0200
+
+khronos-opencl-headers (1.2-2012.11.30-2ubuntu1) raring; urgency=low
+
+  * Build with -msse2 -msse. The package builds header files only, so don't
+    care about the flags which are needed to include the intrinsics headers.
+
+ -- Matthias Klose <doko@ubuntu.com>  Wed, 03 Apr 2013 12:17:51 +0200
+
+khronos-opencl-headers (1.2-2012.11.30-2) unstable; urgency=low
+
+  * opencl-headers: Set Multi-Arch: allowed.  (Closes: #698495)
+
+ -- Andreas Beckmann <debian@abeckmann.de>  Sat, 19 Jan 2013 13:05:07 +0100
+
+khronos-opencl-headers (1.2-2012.11.30-1) unstable; urgency=low
+
+  * New upstream release.  (Closes: #695124, #684444) (LP: #1071239)
+  * Run some trivial compile tests during package build.
+  * CL_EXT_SUFFIX__VERSION_1_2.diff: New, fix typo in macro name.
+  * clSetPrintfCallback.patch: New, add missing declaration.
+  * AMD_extensions.patch: New, add a few extensions from AMD that are not yet
+    in the headers published by khronos. Thanks Vincent Danjean!
+    (Closes: #695136)
+
+ -- Andreas Beckmann <debian@abeckmann.de>  Fri, 07 Dec 2012 10:42:50 +0100
+
+khronos-opencl-headers (1.2-2012.04.18a-1) unstable; urgency=low
+
+  * Use cl.hpp from API 1.2.  (Closes: #676427)
+  * Remove reference to API 1.0 from long Description.  (Closes: #675486)
+
+ -- Andreas Beckmann <debian@abeckmann.de>  Fri, 08 Jun 2012 05:36:06 +0200
+
+khronos-opencl-headers (1.2-2012.04.18-2) unstable; urgency=low
+
+  * Move from contrib to main.  There is a free version of libopencl1 (from
+    http://forge.imag.fr/projects/ocl-icd/) coming, see #675528.
+
+ -- Andreas Beckmann <debian@abeckmann.de>  Sat, 02 Jun 2012 20:11:28 +0200
+
+khronos-opencl-headers (1.2-2012.04.18-1) unstable; urgency=low
+
+  * New upstream release.
+  * Upload to unstable.
+  * debian/copyright: Use the final copyright-format 1.0 URL.
+  * Update Standards-Version to 3.9.3, no changes needed.
+
+ -- Andreas Beckmann <debian@abeckmann.de>  Wed, 09 May 2012 13:40:54 +0200
+
+khronos-opencl-headers (1.2-2011.11.16-1) experimental; urgency=low
+
+  [ Andreas Beckmann ]
+  * OpenCL API 1.2.
+  * debian/copyright: Update to dep5.mdwn?revision=202.
+  * Upload to experimental.
+
+  [ Russ Allbery ]
+  * Add DM-Upload-Allowed: yes.
+
+ -- Russ Allbery <rra@debian.org>  Mon, 23 Jan 2012 11:11:54 -0800
+
+khronos-opencl-headers (1.1-2010.07.15-2) unstable; urgency=low
+
+  * Upload to unstable.
+  * Set Maintainer to Debian NVIDIA Maintainers and move myself to Uploaders.
+
+ -- Andreas Beckmann <debian@abeckmann.de>  Sat, 25 Jun 2011 18:24:31 +0200
+
+khronos-opencl-headers (1.1-2010.07.15-1) experimental; urgency=low
+
+  * OpenCL API 1.1
+  * Upload to experimental.
+  * Update Standards-Version to 3.9.2, no changes needed.
+
+ -- Andreas Beckmann <debian@abeckmann.de>  Sun, 15 May 2011 18:08:12 -0700
+
+khronos-opencl-headers (1.0-2010.06.13-2) unstable; urgency=low
+
+  [ Russ Allbery ]
+  * Upload to unstable.
+  * Add myself to Uploaders.
+
+  [ Andreas Beckmann ]
+  * Fix typo in debian/watch and add version=3.
+
+ -- Russ Allbery <rra@debian.org>  Tue, 26 Apr 2011 17:11:42 -0700
+
+khronos-opencl-headers (1.0-2010.06.13-1) experimental; urgency=low
+
+  * Initial release.  (Closes: #598477)
+  * Upload to experimental.
+
+ -- Andreas Beckmann <debian@abeckmann.de>  Mon, 11 Oct 2010 01:01:53 +0200

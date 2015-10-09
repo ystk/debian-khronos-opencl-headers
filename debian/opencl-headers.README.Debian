@@ -1,0 +1,14 @@
+opencl-headers for Debian
+-------------------------
+
+This package contains the OpenCL API headers as published by The Khronos
+Group Inc.  These headers are free.  There is no OpenCL library included
+because no free OpenCL implementation (that I know of) exists at the moment.
+
+Non-free OpenCL implementations are available from e.g. NVIDIA (packaged in
+Debian as nvidia-libopencl1 and nvidia-opencl-icd) or AMD/ATI.
+
+The OpenCL specifications can be freely downloaded from
+<http://www.khronos.org/registry/cl/> but cannot be redistributed.
+
+ -- Andreas Beckmann <debian@abeckmann.de>  Wed, 29 Sep 2010 10:00:57 +0200
