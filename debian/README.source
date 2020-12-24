@@ -1,0 +1,12 @@
+khronos-opencl-headers for Debian
+---------------------------------
+
+The headers can be downloaded as individual files from
+<http://www.khronos.org/registry/cl/>.  The get-orig-source target in
+debian/rules can be used to download them all and generate a tarball.
+The API version to download has to be defined in debian/rules.
+
+As upstream version number use A.B-YYYY.MM.DD where A.B is the API version,
+followed by the date of last modification that can be found in the VCS
+generated Revision:/Date: comment in the headers.
+
